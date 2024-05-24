@@ -27,10 +27,14 @@ const CreateVenueForm = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        if (name in venueData.meta || name in venueData.location) {
+        if (name in venueData.meta) {
             setVenueData({
                 ...venueData,
-                meta: { ...venueData.meta, [name]: value },
+                meta: { ...venueData.meta, [name]: value === 'true' }
+            });
+        } else if (name in venueData.location) {
+            setVenueData({
+                ...venueData,
                 location: { ...venueData.location, [name]: value }
             });
         } else {
@@ -53,7 +57,8 @@ const CreateVenueForm = () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                    'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+                    'X-Noroff-API-Key': process.env.VITE_API_KEY
                 },
                 body: JSON.stringify(venueData)
             });
