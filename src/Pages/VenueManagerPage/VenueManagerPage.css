@@ -1,0 +1,12 @@
+.custom-card {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .custom-card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  .custom-card .card-body {
+    padding: 1rem;
+  }
+  

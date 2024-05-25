@@ -1,29 +1,21 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/common/Header';
-import Footer from './components/common/Footer';
-import Home from './pages/customer/Home';
-import VenueList from './pages/customer/VenueList';
-import VenueDetails from './pages/customer/VenueDetails';
-import Login from './pages/LoginPage';
-import RegistrationForm from './pages/RegisterPage';
-import VenueManagement from './pages/admin/VenueManagement';  
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Layout from './Components/Layout';
+import HomePage from './Pages/HomePage';
+import LoginPage from './Pages/LoginPage';
+import VenuePage from './Pages/VenuePage';
 
 function App() {
   return (
     <Router>
-      <Header />
-      <div style={{ padding: '20px' }}>
+      <Layout>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/venues" element={<VenueList />} />
-          <Route path="/venues/:venueId" element={<VenueDetails />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<RegistrationForm />} />
-          <Route path="/venue-management" element={<VenueManagement />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/venue" element={<VenuePage />} />
+          // Add more routes as needed
         </Routes>
-      </div>
-      <Footer />
+      </Layout>
     </Router>
   );
 }

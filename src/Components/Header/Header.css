@@ -1,0 +1,34 @@
+.custom-navbar {
+    padding: 1rem 0;
+    background-color: #343a40; /* Dark background color */
+  }
+  
+  .custom-navbar .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f8f9fa; /* Light color for the brand */
+  }
+  
+  .custom-navbar .nav-link {
+    color: #f8f9fa;
+    font-size: 1rem;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .custom-navbar .nav-link:hover {
+    color: #adb5bd; /* Slightly lighter color on hover */
+  }
+  
+  .custom-navbar .btn-outline-danger {
+    color: #f8f9fa;
+    border-color: #f8f9fa;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .custom-navbar .btn-outline-danger:hover {
+    background-color: #f8f9fa;
+    color: #343a40;
+    border-color: #f8f9fa;
+  }
+  

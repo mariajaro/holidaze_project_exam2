@@ -1,0 +1,8 @@
+.venue-card {
+    transition: transform 0.2s;
+  }
+  
+  .venue-card:hover {
+    transform: scale(1.05);
+  }
+  
