@@ -83,12 +83,12 @@ export default function Login() {
           />
         </Form.Group>
         <div className="d-grid gap-2">
-          <Button variant="primary" type="submit">
+          <Button className="btn-primary-custom" type="submit">
             Login
           </Button>
           <p className="text-center mt-3">Not registered yet?</p>
           <Link to="/create-account">
-            <Button variant="secondary" type="button">
+            <Button className="btn-secondary-custom" type="button">
               Create account
             </Button>
           </Link>

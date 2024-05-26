@@ -30,7 +30,7 @@ export default function VenueList() {
   }
 
   return (
-    <Container>
+    <Container className="venue-list-container">
       {isLoading && (
         <div className="text-center my-4">
           <Spinner animation="border" role="status">
@@ -38,9 +38,9 @@ export default function VenueList() {
           </Spinner>
         </div>
       )}
-      <Row>
+      <Row className="venue-list-row">
         {allVenues.map((venue) => (
-          <Col key={venue.id} xs={12} sm={6} md={4} lg={3} className="mb-4">
+          <Col key={venue.id} xs={12} sm={6} md={4} className="venue-list-col">
             <Venues
               id={venue.id}
               image={venue.media}
@@ -54,7 +54,7 @@ export default function VenueList() {
         ))}
       </Row>
       <div className="text-center my-4">
-        <Button variant="primary" onClick={LoadMore}>
+        <Button className="btn-custom-primary" onClick={LoadMore}>
           See more venues
         </Button>
       </div>

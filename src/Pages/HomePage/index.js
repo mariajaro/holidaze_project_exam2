@@ -6,7 +6,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 export default function HomePage() {
   return (
     <Container>
-      <Row>
+      <Row className="mt-5">
         <Col>
           <Searchbar />
         </Col>

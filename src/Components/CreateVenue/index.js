@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Container, Form, Button } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
+import { Container, Form, Button, Spinner, Alert } from 'react-bootstrap';
 import './CreateVenue.css';
 
 export default function CreateVenue() {
@@ -20,6 +20,8 @@ export default function CreateVenue() {
     pets: false
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     if (type === 'checkbox') {
@@ -31,8 +33,55 @@ export default function CreateVenue() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(venueData);
-    // Add your submit logic here
+    const accessToken = localStorage.getItem("accessToken");
+    const apiKey = localStorage.getItem("key");
+
+    const details = {
+      media: [
+        {
+          url: venueData.image,
+        },
+      ],
+      name: venueData.name,
+      location: {
+        address: venueData.address,
+        city: venueData.city,
+        zip: venueData.zip,
+        country: venueData.country,
+      },
+      description: venueData.description,
+      price: Number(venueData.price),
+      maxGuests: Number(venueData.guests),
+      meta: {
+        wifi: venueData.wifi,
+        parking: venueData.parking,
+        breakfast: venueData.breakfast,
+        pets: venueData.pets,
+      },
+    };
+
+    try {
+      const response = await fetch('https://v2.api.noroff.dev/holidaze/venues', {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+          Authorization: `Bearer ${accessToken}`,
+          'X-Noroff-API-Key': apiKey,
+        },
+        body: JSON.stringify(details),
+      });
+
+      if (response.status === 201) {
+        alert('Venue created successfully');
+        navigate('/venue-manager'); 
+      } else {
+        const json = await response.json();
+        alert(`Something went wrong. Status code: ${response.status}\n${json.message}`);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again.');
+    }
   };
 
   return (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import FetchMyProfile from "../../Hooks/ProfileApi";
-import { Form, Button, Spinner, Container, Row, Col } from "react-bootstrap";
+import { Form, Button, Spinner, Container, Row, Col, Alert } from "react-bootstrap";
 
 export default function UpdateProfile() {
   const name = localStorage.getItem("name");
@@ -10,15 +10,19 @@ export default function UpdateProfile() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    avatar: '',
+    avatarUrl: '',
+    avatarAlt: '',
     bio: '',
+    venueManager: false
   });
 
   useEffect(() => {
     if (profile) {
       setFormData({
-        avatar: profile.avatar?.url || '',
+        avatarUrl: profile.avatar?.url || '',
+        avatarAlt: profile.avatar?.alt || '',
         bio: profile.bio || '',
+        venueManager: profile.venueManager || false
       });
     }
   }, [profile]);
@@ -27,8 +31,12 @@ export default function UpdateProfile() {
     e.preventDefault();
 
     const details = {
-      avatar: formData.avatar,
+      avatar: {
+        url: formData.avatarUrl,
+        alt: formData.avatarAlt
+      },
       bio: formData.bio,
+      venueManager: formData.venueManager
     };
 
     const accessToken = localStorage.getItem("accessToken");
@@ -62,13 +70,13 @@ export default function UpdateProfile() {
   }
 
   if (isLoading) return <Spinner animation="border" role="status"><span className="visually-hidden">Loading...</span></Spinner>;
-  if (isError) return <div>Error loading profile data.</div>;
+  if (isError) return <Alert variant="danger">Error loading profile data.</Alert>;
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: value,
+      [name]: type === 'checkbox' ? checked : value,
     }));
   };
 
@@ -78,14 +86,24 @@ export default function UpdateProfile() {
         <Col md={8}>
           <Form onSubmit={handleSubmit}>
             <h1>Update Profile</h1>
-            <Form.Group controlId="formAvatar">
+            <Form.Group controlId="formAvatarUrl">
               <Form.Label>Avatar URL</Form.Label>
               <Form.Control
                 type="url"
-                name="avatar"
-                value={formData.avatar}
+                name="avatarUrl"
+                value={formData.avatarUrl}
                 onChange={handleChange}
                 placeholder="Enter avatar URL"
+              />
+            </Form.Group>
+            <Form.Group controlId="formAvatarAlt" className="mt-3">
+              <Form.Label>Avatar Alt Text</Form.Label>
+              <Form.Control
+                type="text"
+                name="avatarAlt"
+                value={formData.avatarAlt}
+                onChange={handleChange}
+                placeholder="Enter avatar alt text"
               />
             </Form.Group>
             <Form.Group controlId="formBio" className="mt-3">
@@ -97,6 +115,15 @@ export default function UpdateProfile() {
                 onChange={handleChange}
                 placeholder="Enter your bio"
                 rows={3}
+              />
+            </Form.Group>
+            <Form.Group controlId="formVenueManager" className="mt-3">
+              <Form.Check
+                type="checkbox"
+                name="venueManager"
+                label="I am a venue manager"
+                checked={formData.venueManager}
+                onChange={handleChange}
               />
             </Form.Group>
             <Button variant="primary" type="submit" className="mt-3">

@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Logout() {
-  const navigate = useNavigate();  // Correct use of the navigation hook
+  const navigate = useNavigate(); 
 
   const token = localStorage.getItem("accessToken");
 
@@ -10,7 +10,7 @@ export default function Logout() {
     e.preventDefault();
     if (token) {
       localStorage.clear();
-      navigate("/login");  // Redirect to login page after logout
+      navigate("/login"); 
     }
   }
 

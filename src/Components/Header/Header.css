@@ -1,34 +1,39 @@
 .custom-navbar {
-    padding: 1rem 0;
-    background-color: #343a40; /* Dark background color */
-  }
-  
-  .custom-navbar .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #f8f9fa; /* Light color for the brand */
-  }
-  
-  .custom-navbar .nav-link {
-    color: #f8f9fa;
-    font-size: 1rem;
-    margin-right: 1rem;
-    transition: color 0.3s ease;
-  }
-  
-  .custom-navbar .nav-link:hover {
-    color: #adb5bd; /* Slightly lighter color on hover */
-  }
-  
-  .custom-navbar .btn-outline-danger {
-    color: #f8f9fa;
-    border-color: #f8f9fa;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-  }
-  
-  .custom-navbar .btn-outline-danger:hover {
-    background-color: #f8f9fa;
-    color: #343a40;
-    border-color: #f8f9fa;
-  }
-  
+  padding: 1rem 0;
+  background-color: #674747; 
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f8f9fa; 
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.custom-navbar .nav-link {
+  color: #f8f9fa;
+  font-size: 1rem;
+  margin-right: 1rem;
+  transition: color 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #adb5bd; 
+}
+
+.custom-navbar .btn-logout-button {
+  color: #674747;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.custom-navbar .btn-logout-button:hover {
+  background-color: #e1e1e1;
+  color: #674747;
+  border-color: #e1e1e1;
+}
+
+.custom-logout-button {
+  margin-left: 0.5rem;
+}

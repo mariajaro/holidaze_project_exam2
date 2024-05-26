@@ -8,17 +8,6 @@ export default function ProfilePage() {
   const name = localStorage.getItem('name');
   const { profile, isLoading } = FetchMyProfile(`https://v2.api.noroff.dev/holidaze/profiles/${name}`);
 
-  function Manager() {
-    if (profile && profile.venueManager === true) {
-      return (
-        <Link to="/create-venue">
-          <Button variant="primary" className="mt-3">Add Venue</Button>
-        </Link>
-      );
-    }
-    return null;
-  }
-
   function Content() {
     if (isLoading) {
       return <Spinner animation="border" role="status"><span className="visually-hidden">Loading...</span></Spinner>;
@@ -40,7 +29,6 @@ export default function ProfilePage() {
             <Link to="/update-profile">
               <Button variant="primary" className="mt-3">Update Profile</Button>
             </Link>
-            <Manager />
           </Col>
           <Col md={8}>
             <h3>Bio</h3>

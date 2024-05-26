@@ -15,9 +15,9 @@ export default function Header() {
   };
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" className="custom-navbar">
+    <Navbar expand="lg" className="custom-navbar">
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand as={Link} to="/" className="navbar-brand">
           Holidaze
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -29,7 +29,7 @@ export default function Header() {
             {isLoggedIn && <Nav.Link as={Link} to="/venue-manager">Venue Manager</Nav.Link>}
           </Nav>
           {isLoggedIn ? (
-            <Button variant="outline-danger" onClick={handleLogout} className="ms-2">
+            <Button variant="logout-button" onClick={handleLogout} className="ms-2 custom-logout-button">
               Logout
             </Button>
           ) : (

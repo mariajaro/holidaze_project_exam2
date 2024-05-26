@@ -22,7 +22,7 @@ export default function FetchMyVenues(url) {
         };
         const response = await fetch(url, data);
         const json = await response.json();
-        setVenues(json.data);  // Access the 'data' property
+        setVenues(json.data);  
       } catch (error) {
         console.log(error);
         setIsError(true);

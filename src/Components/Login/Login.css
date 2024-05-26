@@ -1,9 +1,35 @@
-/* Login.css */
 .min-vh-100 {
-    min-height: 100vh;
-  }
-  
-  .mt-5 {
-    margin-top: 3rem;
-  }
-  
+  min-height: 100vh;
+}
+
+.mt-5 {
+  margin-top: 3rem;
+}
+
+.btn-primary-custom {
+  background-color: #674747;
+  border-color: #674747;
+  color: #fff;
+}
+
+.btn-primary-custom:hover,
+.btn-primary-custom:focus,
+.btn-primary-custom:active {
+  background-color: #543939;
+  border-color: #543939;
+  color: #fff;
+}
+
+.btn-secondary-custom {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: #fff;
+}
+
+.btn-secondary-custom:hover,
+.btn-secondary-custom:focus,
+.btn-secondary-custom:active {
+  background-color: #5a6268;
+  border-color: #545b62;
+  color: #fff;
+}

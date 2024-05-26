@@ -1,12 +1,86 @@
-.custom-card {
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  .custom-card img {
-    height: 200px;
-    object-fit: cover;
-  }
-  .custom-card .card-body {
-    padding: 1rem;
-  }
-  
+.container {
+  margin-top: 2rem;
+  font-family: 'Junge', sans-serif;
+}
+
+.custom-navbar {
+  padding: 1rem 0;
+  background-color: #674747; 
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f8f9fa;
+}
+
+.custom-navbar .nav-link {
+  color: #f8f9fa;
+  font-size: 1rem;
+  margin-right: 1rem;
+  transition: color 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #adb5bd;
+}
+
+.custom-navbar .btn-outline-danger {
+  color: #f8f9fa;
+  border-color: #f8f9fa;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.custom-navbar .btn-outline-danger:hover {
+  background-color: #f8f9fa;
+  color: #343a40;
+  border-color: #f8f9fa;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.my-4 {
+  margin: 2rem 0;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.me-2 {
+  margin-right: 0.5rem;
+}
+
+.btn-custom-create {
+  background-color: #674747;
+  border-color: #674747;
+  color: #fff;
+}
+
+.btn-custom-create:hover,
+.btn-custom-create:focus,
+.btn-custom-create:active {
+  background-color: #543939;
+  border-color: #543939;
+  color: #fff;
+}
+
+.btn-custom-delete {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: #fff;
+}
+
+.btn-custom-delete:hover,
+.btn-custom-delete:focus,
+.btn-custom-delete:active {
+  background-color: #5a6268;
+  border-color: #5a6268;
+  color: #fff;
+}

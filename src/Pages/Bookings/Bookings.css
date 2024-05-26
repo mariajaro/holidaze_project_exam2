@@ -1,0 +1,29 @@
+body {
+    font-family: 'Junge', sans-serif;
+  }
+  
+  .btn-custom-primary {
+    background-color: #674747;
+    border-color: #674747;
+    color: #fff;
+  }
+  
+  .btn-custom-primary:hover,
+  .btn-custom-primary:focus,
+  .btn-custom-primary:active {
+    background-color: #543939;
+    border-color: #543939;
+    color: #fff;
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  

@@ -1,4 +1,3 @@
-/* VenueList.css */
 .venue-card {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -45,3 +44,30 @@
 .my-4 {
   margin: 20px 0;
 }
+
+.venue-list-container {
+  margin-top: 20px;
+}
+
+.venue-list-row {
+  margin-top: 20px;
+}
+
+.venue-list-col {
+  margin-bottom: 20px;
+}
+
+.btn-custom-primary {
+  background-color: #674747;
+  border-color: #674747;
+  color: #fff;
+}
+
+.btn-custom-primary:hover,
+.btn-custom-primary:focus,
+.btn-custom-primary:active {
+  background-color: #543939;
+  border-color: #543939;
+  color: #fff;
+}
+

@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Junge&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Junge', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -11,3 +11,47 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Main button style */
+.btn-primary {
+  background-color: #674747 !important;
+  border-color: #674747 !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #543939 !important;
+  border-color: #543939 !important;
+  color: #fff !important;
+}
+
+/* Outline button style */
+.btn-outline-primary {
+  color: #674747 !important;
+  border-color: #674747 !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+  background-color: #674747 !important;
+  color: #fff !important;
+  border-color: #674747 !important;
+}
+
+/* Danger button style */
+.btn-outline-danger {
+  color: #674747 !important;
+  border-color: #674747 !important;
+}
+
+.btn-outline-danger:hover,
+.btn-outline-danger:focus,
+.btn-outline-danger:active {
+  background-color: #674747 !important;
+  color: #fff !important;
+  border-color: #674747 !important;
+}
+

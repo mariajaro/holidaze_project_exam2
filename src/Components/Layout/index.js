@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import { Container } from "react-bootstrap";
 import Footer from "../Footer";
 import Header from "../Header";
 import HomePage from "../../Pages/HomePage";
@@ -17,20 +16,18 @@ export default function Layout() {
   return (
     <div>
       <Header />
-      <Container className="my-4">
-        <Routes>
-          <Route index element={<HomePage />} />
-          <Route path="/venue/:id" element={<VenuePage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/create-venue" element={<CreateVenuePage />} />
-          <Route path="/update-venue/:id" element={<UpdateVenuePage />} />
-          <Route path="/bookings" element={<Bookings />} />
-          <Route path="/create-account" element={<CreateAccountPage />} />
-          <Route path="/update-profile" element={<UpdateProfilePage />} />
-          <Route path="/venue-manager" element={<VenueManager />} />  // Add this route
-        </Routes>
-      </Container>
+      <Routes>
+        <Route index element={<HomePage />} />
+        <Route path="/venue/:id" element={<VenuePage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/create-venue" element={<CreateVenuePage />} />
+        <Route path="/update-venue/:id" element={<UpdateVenuePage />} />
+        <Route path="/bookings" element={<Bookings />} />
+        <Route path="/create-account" element={<CreateAccountPage />} />
+        <Route path="/update-profile" element={<UpdateProfilePage />} />
+        <Route path="/venue-manager" element={<VenueManager />} />
+      </Routes>
       <Footer />
     </div>
   );

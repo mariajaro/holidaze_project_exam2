@@ -1,20 +1,76 @@
 .text-center {
-    text-align: center;
-  }
-  
-  .my-4 {
-    margin: 2rem 0;
-  }
-  
-  .mb-4 {
-    margin-bottom: 1.5rem;
-  }
-  
-  .mt-4 {
-    margin-top: 1.5rem;
-  }
-  
-  .me-2 {
-    margin-right: 0.5rem;
-  }
-  
+  text-align: center;
+}
+
+.my-4 {
+  margin: 2rem 0;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.me-2 {
+  margin-right: 0.5rem;
+}
+
+.venue-page-container {
+  font-family: 'Junge', sans-serif;
+}
+
+.venue-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #674747;
+}
+
+.venue-description {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.venue-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.venue-badges {
+  margin-top: 1rem;
+}
+
+.booking-form .form-label {
+  font-weight: bold;
+}
+
+.btn-primary-custom {
+  background-color: #674747;
+  border-color: #674747;
+  color: #fff;
+}
+
+.btn-primary-custom:hover,
+.btn-primary-custom:focus,
+.btn-primary-custom:active {
+  background-color: #543939;
+  border-color: #543939;
+  color: #fff;
+}
+
+.btn-secondary-custom {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: #fff;
+}
+
+.btn-secondary-custom:hover,
+.btn-secondary-custom:focus,
+.btn-secondary-custom:active {
+  background-color: #5a6268;
+  border-color: #545b62;
+  color: #fff;
+}

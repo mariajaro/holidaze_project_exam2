@@ -1,8 +1,39 @@
+.venue-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .venue-card {
-    transition: transform 0.2s;
-  }
-  
-  .venue-card:hover {
-    transform: scale(1.05);
-  }
-  
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.venue-image-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+.venue-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.venue-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.venue-location {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.venue-price {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
