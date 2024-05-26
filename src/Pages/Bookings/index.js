@@ -1,22 +1,20 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Container, Row, Col, Card, Button, Alert } from "react-bootstrap";
 import FetchMyBookings from "../../Hooks/BookingsApi";
 import FetchMyVenues from "../../Hooks/MyVenuesApi";
 import FetchMyProfile from "../../Hooks/ProfileApi";
-import "./Bookings.css";  
 
 export default function Bookings() {
-  const navigate = useNavigate();
+
   const isLoggedOut = localStorage.getItem("accessToken") === null;
-  
   if (isLoggedOut) {
     return (
-      <Container className="text-center mt-5">
+      <Container className="mt-5">
         <Alert variant="warning">
           <p>You have to log in to see your bookings</p>
           <Link to="/login">
-            <Button className="btn-custom-primary">Go to login</Button>
+            <Button variant="primary">Go to login</Button>
           </Link>
         </Alert>
       </Container>
@@ -35,11 +33,11 @@ export default function Bookings() {
 
   if (bookings.isError || venues.isError) {
     return (
-      <Container className="text-center mt-5">
+      <Container className="mt-5">
         <Alert variant="warning">
           <p>You have to log in to see your bookings and venues</p>
           <Link to="/login">
-            <Button className="btn-custom-primary">Go to login</Button>
+            <Button variant="primary">Go to login</Button>
           </Link>
         </Alert>
       </Container>
@@ -57,16 +55,15 @@ export default function Bookings() {
       <Row>
         {bookings.bookings.map((booking) => (
           <Col md={6} lg={4} key={booking.id} className="mb-4">
-            <Card className="h-100">
+            <Card>
               <Link to={`/venue/${booking.venue.id}`}>
                 <Card.Img
                   variant="top"
                   src={booking.venue.media?.[0]?.url || "default-image.jpg"}
                   alt={booking.venue.name}
-                  className="card-img-top"
                 />
               </Link>
-              <Card.Body className="d-flex flex-column">
+              <Card.Body>
                 <Card.Title>{booking.venue.name}</Card.Title>
                 <Card.Text>{booking.venue.location.city}, {booking.venue.location.country}</Card.Text>
                 <Card.Text>{booking.venue.description}</Card.Text>
